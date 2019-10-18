@@ -17,8 +17,8 @@
 
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../Backend/etc/menu.xsd">
     <menu>
-    	<add id="Naxero_CodeInjector::manage_code" dependsOnConfig="code_injector/general/enable" title="Code Injector" module="Naxero_CodeInjector" parent="Magento_Backend::content" resource="Naxero_CodeInjector::manage_code" />
-        <add id="Naxero_CodeInjector::jsindex" title="JS code" module="Naxero_CodeInjector" dependsOnModule="Naxero_CodeInjector" action="codeinjector/js/index" parent="Naxero_CodeInjector::manage_code" resource="Naxero_Translation::jsindex"/>
-        <add id="Naxero_CodeInjector::cssindex" title="CSS code" module="Naxero_CodeInjector" dependsOnModule="Naxero_CodeInjector" action="codeinjector/css/index" parent="Naxero_CodeInjector::manage_code" resource="Naxero_Translation::cssindex"/>
+    	<add id="Naxero_QuickUi::manage_code" dependsOnConfig="quick_ui/general/enable" title="Code Injector" module="Naxero_QuickUi" parent="Magento_Backend::content" resource="Naxero_QuickUi::manage_code" />
+        <add id="Naxero_QuickUi::jsindex" title="JS code" module="Naxero_QuickUi" dependsOnModule="Naxero_QuickUi" action="quickui/js/index" parent="Naxero_QuickUi::manage_code" resource="Naxero_Translation::jsindex"/>
+        <add id="Naxero_QuickUi::cssindex" title="CSS code" module="Naxero_QuickUi" dependsOnModule="Naxero_QuickUi" action="quickui/css/index" parent="Naxero_QuickUi::manage_code" resource="Naxero_Translation::cssindex"/>
     </menu>
 </config>

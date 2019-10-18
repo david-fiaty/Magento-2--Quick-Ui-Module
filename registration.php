@@ -15,6 +15,6 @@
 
 \Magento\Framework\Component\ComponentRegistrar::register(
     \Magento\Framework\Component\ComponentRegistrar::MODULE,
-    'Naxero_CodeInjector',
+    'Naxero_QuickUi',
     __DIR__
 );

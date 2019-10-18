@@ -35,7 +35,7 @@ class InstallSchema implements \Magento\Framework\Setup\InstallSchemaInterface
 
         // Define the js code table
         $table1 = $installer->getConnection()
-            ->newTable($installer->getTable('naxero_codeinjector_js'))
+            ->newTable($installer->getTable('naxero_quickui_js'))
             ->addColumn(
                 'file_id',
                 Table::TYPE_INTEGER,
@@ -57,7 +57,7 @@ class InstallSchema implements \Magento\Framework\Setup\InstallSchemaInterface
 
         // Define the css code table
         $table2 = $installer->getConnection()
-            ->newTable($installer->getTable('naxero_codeinjector_css'))
+            ->newTable($installer->getTable('naxero_quickui_css'))
             ->addColumn(
                 'id',
                 Table::TYPE_INTEGER,
