@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Naxero.com
+ * Professional ecommerce integrations for Magento
+ *
+ * PHP version 7
+ *
+ * @category  Magento2
+ * @package   Naxero
+ * @author    Platforms Development Team <contact@naxero.com>
+ * @copyright Naxero.com
+ * @license   https://opensource.org/licenses/mit-license.html MIT License
+ * @link      https://www.naxero.com
+ */
+-->
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../Backend/etc/menu.xsd">
+    <menu>
+    	<add id="Naxero_CodeInjector::manage_code" dependsOnConfig="code_injector/general/enable" title="Code Injector" module="Naxero_CodeInjector" parent="Magento_Backend::content" resource="Naxero_CodeInjector::manage_code" />
+        <add id="Naxero_CodeInjector::jsindex" title="JS code" module="Naxero_CodeInjector" dependsOnModule="Naxero_CodeInjector" action="codeinjector/js/index" parent="Naxero_CodeInjector::manage_code" resource="Naxero_Translation::jsindex"/>
+        <add id="Naxero_CodeInjector::cssindex" title="CSS code" module="Naxero_CodeInjector" dependsOnModule="Naxero_CodeInjector" action="codeinjector/css/index" parent="Naxero_CodeInjector::manage_code" resource="Naxero_Translation::cssindex"/>
+    </menu>
+</config>

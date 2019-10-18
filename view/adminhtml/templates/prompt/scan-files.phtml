@@ -1,0 +1,49 @@
+<!--
+/**
+ * Naxero.com
+ * Professional ecommerce integrations for Magento
+ *
+ * PHP version 7
+ *
+ * @category  Magento2
+ * @package   Naxero
+ * @author    Platforms Development Team <contact@naxero.com>
+ * @copyright Naxero.com
+ * @license   https://opensource.org/licenses/mit-license.html MIT License
+ * @link      https://www.naxero.com
+ */
+-->
+
+<form id="prompt_form" action="">
+    <div class="admin__field-control">
+        <div class="admin__field admin__field-option">
+            <input type="radio" id="update_add" name="update_mode" value="update_add" checked="checked">
+            <label class="admin__field-label" for="update_add">
+                <span>
+                    <?=  $block->escapeHtml(__('Add new files')) ?>
+                </span>
+            </label>
+        </div>
+        <div class="admin__field-note">
+            <span>
+                <?= $block->escapeHtml(__('Add only new files to the index and preserve existing indexed content.')) ?>
+            </span>
+        </div>
+    </div>
+
+    <div class="admin__field-control">
+        <div class="admin__field admin__field-option">
+            <input type="radio" id="update_replace" name="update_mode" value="update_replace">
+            <label class="admin__field-label" for="update_replace">
+                <span>
+                    <?= $block->escapeHtml(__('Reload all files')) ?>
+                </span>
+            </label>
+        </div>
+        <div class="admin__field-note">
+            <span>
+                <?= $block->escapeHtml(__('Clear the indexed content and reload all files into the index.')) ?>
+            </span>
+        </div>
+    </div>
+</form>

@@ -1,0 +1,89 @@
+<!--
+/**
+ * Naxero.com
+ * Professional ecommerce integrations for Magento
+ *
+ * PHP version 7
+ *
+ * @category  Magento2
+ * @package   Naxero
+ * @author    Platforms Development Team <contact@naxero.com>
+ * @copyright Naxero.com
+ * @license   https://opensource.org/licenses/mit-license.html MIT License
+ * @link      https://www.naxero.com
+ */
+-->
+
+<div id="translation-container" class="logs-view">
+	<div id="translation-table-list">
+		<div id="translation-table-toolbar">
+			<div class="admin__form-field">
+				<label class="label admin__form-field-label">
+					<span><?= $block->escapeHtml(__('Pagination')); ?></span>
+				</label>
+				<div class="admin__form-field-control">
+					<?= /* @noEscape */ $block->helper->getPagerSelect([
+			            'name' => 'translation-paging-filter',
+			            'class' => 'admin__control-select translation-paging-filter'
+			    	], $block->getLayout()); ?>	
+				</div>
+			</div>	
+			<div class="page-actions" data-ui-id="page-actions-toolbar-content-header">
+				<div class="page-actions-inner">
+					<div class="page-actions-buttons">
+						<button id="update-files" name="update-files" type="button" class="action-default primary">
+							<span><?= $block->escapeHtml(__('Scan files')); ?></span>
+						</button>
+						<button id="clear-logs" name="clear-logs" type="button" class="action-default primary">
+							<span><?= $block->escapeHtml(__('Clear logs')); ?></span>
+						</button>
+					</div>
+				</div>
+			</div>
+		</div>	
+		<div id="translation-table-content"></div>
+	</div>
+	<div id="translation-table-detail">
+		<div id="translation-detail-toolbar">
+			<div class="page-actions" data-ui-id="page-actions-toolbar-content-header">
+				<div class="page-actions-inner">
+					<div class="page-actions-buttons">
+						<button id="button-back" name="button-back" type="button" class="action- scalable back">
+							<span><?= $block->escapeHtml(__('Back')); ?></span>
+						</button>
+						<button id="download-file" name="download-file" type="button" class="action- scalable action-secondary">
+							<span><?= $block->escapeHtml(__('Download CSV')); ?></span>
+						</button>
+						<button id="flush-cache-detail" name="flush-cache-detail" type="button" class="action-default primary">
+							<span><?= $block->escapeHtml(__('Flush cache')); ?></span>
+						</button>
+					</div>
+				</div>
+			</div>
+		</div>	
+		<div id="translation-file-path"></div>	
+		<div class="admin__form-field">
+			<label class="label admin__form-field-label">
+				<span><?= $block->escapeHtml(__('Pagination')); ?></span>
+			</label>
+			<div class="admin__form-field-control">
+				<?= /* @noEscape */ $block->helper->getPagerSelect([
+					'name' => 'translation-paging-filter',
+					'class' => 'admin__control-select translation-paging-filter'
+				], $block->getLayout()); ?>	
+			</div>
+		</div>
+		<div id="translation-table-detail-content"></div>
+	</div>
+</div>
+
+<div data-mage-init='{
+	"logsjs": {
+		"dataUrl": "<?= $block->escapeUrl($block->getUrl('translation/data/index', ['view' => 'logs'])); ?>",
+		"scanUrl": "<?= $block->escapeUrl($block->getUrl('translation/scan/index', ['view' => 'logs'])); ?>",
+		"clearLogsUrl": "<?= $block->escapeUrl($block->getUrl('translation/logs/index', ['action' => 'clear_logs'])); ?>",
+		"detailViewUrl": "<?= $block->escapeUrl($block->getUrl('translation/files/detail')); ?>",
+		"cacheUrl": "<?= $block->escapeUrl($block->getUrl('translation/cache/index')); ?>",
+		"localeData": <?= /* @noEscape */ json_encode($block->helper->getTableLocaleData()); ?>
+	}
+}'>

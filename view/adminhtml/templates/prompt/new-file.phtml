@@ -1,0 +1,45 @@
+<!--
+/**
+ * Naxero.com
+ * Professional ecommerce integrations for Magento
+ *
+ * PHP version 7
+ *
+ * @category  Magento2
+ * @package   Naxero
+ * @author    Platforms Development Team <contact@naxero.com>
+ * @copyright Naxero.com
+ * @license   https://opensource.org/licenses/mit-license.html MIT License
+ * @link      https://www.naxero.com
+ */
+-->
+
+<form id="prompt_form" action="">
+    <div class="admin__field-control">
+        <div class="class="admin__field admin__field-option">
+            <label class="admin__field-label" for="new_file_path">
+                <span><?= $block->escapeHtml(__('File path')) ?></span>
+            </label>
+            <input type="text" id="new_file_path" name="new_file_path" class="admin__control-text">
+        </div>
+        <div class="admin__field-note">
+            <span>
+                <?= $block->escapeHtml(__('Select a path for the new file to be created. Start typing for suggestions.')) ?>
+            </span>
+        </div>
+    </div>
+
+    <div class="admin__field-control">
+        <div class="class="admin__field admin__field-option">
+            <label class="admin__field-label" for="new_file_name">
+                <span><?= $block->escapeHtml(__('File name')) ?></span>
+            </label>
+            <input type="text" id="new_file_name" name="new_file_name" class="admin__control-text">
+        </div>
+        <div class="admin__field-note">
+            <span>
+                <?= $block->escapeHtml(__('Select a file name for the new file to be created. Start typing for suggestions.')) ?>
+            </span>
+        </div>
+    </div>
+</form>

@@ -1,0 +1,88 @@
+<!--
+/**
+ * Naxero.com
+ * Professional ecommerce integrations for Magento
+ *
+ * PHP version 7
+ *
+ * @category  Magento2
+ * @package   Naxero
+ * @author    Platforms Development Team <contact@naxero.com>
+ * @copyright Naxero.com
+ * @license   https://opensource.org/licenses/mit-license.html MIT License
+ * @link      https://www.naxero.com
+ */
+-->
+
+<div id="translation-container" class="strings-view">
+	<div id="translation-table-list">
+		<div id="translation-table-toolbar">
+			<div class="admin__form-field">
+				<label class="label admin__form-field-label" for="translation-type-filter">
+					<span><?= $block->escapeHtml(__('Type')); ?></span>
+				</label>
+				<div class="admin__form-field-control">
+					<?= /* @noEscape */ $block->helper->getFilterSelect([
+			            'id' => 'translation-type-filter',
+			            'name' => 'translation-type-filter',
+			            'class' => 'admin__control-select'
+			    	], $block->getLayout()); ?>	
+				</div>
+			</div>
+			<div class="admin__form-field">
+				<label class="label admin__form-field-label" for="translation-locale-filter">
+					<span><?= $block->escapeHtml(__('Locale')); ?></span>
+				</label>
+				<div class="admin__form-field-control">
+					<?= /* @noEscape */ $block->helper->getFilterSelect([
+			           'id' => 'translation-locale-filter',
+			           'name' => 'translation-locale-filter',
+			           'class' => 'admin__control-select'
+			    	], $block->getLayout()); ?>	
+				</div>
+			</div>
+			<div class="admin__form-field">
+				<label class="label admin__form-field-label">
+					<span><?= $block->escapeHtml(__('Pagination')); ?></span>
+				</label>
+				<div class="admin__form-field-control">
+					<?= /* @noEscape */ $block->helper->getPagerSelect([
+			            'name' => 'translation-paging-filter',
+			            'class' => 'admin__control-select translation-paging-filter'
+			    	], $block->getLayout()); ?>	
+				</div>
+			</div>
+			<br><br>
+			<div class="admin__field admin__field-option">
+				<input id="filter_string_errors" name="filter_string_errors" type="checkbox" class="admin__control-checkbox">
+				<label class="admin__field-label" for="filter_string_errors">
+					<?= $block->escapeHtml(__('Show errors only')); ?>                            
+				</label>
+			</div>
+			<div class="page-actions" data-ui-id="page-actions-toolbar-content-header">
+				<div class="page-actions-inner">
+					<div class="page-actions-buttons">
+						<button id="update-files" name="update-files" type="button" class="action-default primary">
+							<span><?= $block->escapeHtml(__('Scan files')); ?></span>
+						</button>
+						<button id="flush-cache" name="flush-cache" type="button" class="action-default primary">
+							<span><?= $block->escapeHtml(__('Flush cache')); ?></span>
+						</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="translation-table-content"></div>
+	</div>
+</div>
+
+<div data-mage-init='{
+	"stringsjs": {
+		"dataUrl": "<?= $block->escapeUrl($block->getUrl('translation/data/index', ['view' => 'strings'])); ?>",
+		"scanUrl": "<?= $block->escapeUrl($block->getUrl('translation/scan/index')); ?>",
+		"detailViewUrl": "<?= $block->escapeUrl($block->getUrl('translation/files/detail')); ?>",
+		"cacheUrl": "<?= $block->escapeUrl($block->getUrl('translation/cache/index')); ?>",
+        "promptUrl": "<?= $block->escapeUrl($block->getUrl('translation/blocks/index')); ?>",
+		"localeData": <?= /* @noEscape */ json_encode($block->helper->getTableLocaleData()); ?>
+	}
+}'>

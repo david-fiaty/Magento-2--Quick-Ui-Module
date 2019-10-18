@@ -1,0 +1,31 @@
+<!--
+/**
+ * Naxero.com
+ * Professional ecommerce integrations for Magento
+ *
+ * PHP version 7
+ *
+ * @category  Magento2
+ * @package   Naxero
+ * @author    Platforms Development Team <contact@naxero.com>
+ * @copyright Naxero.com
+ * @license   https://opensource.org/licenses/mit-license.html MIT License
+ * @link      https://www.naxero.com
+ */
+-->
+
+<form id="prompt_form" method="POST" action="" enctype="multipart/form-data">
+    <div class="admin__field-control">
+        <div class="class="admin__field admin__field-option">
+            <label class="admin__field-label" for="new_file_import">
+                <span><?= $block->escapeHtml(__('Select a CSV file')) ?></span>
+            </label>
+            <input type="file" id="new_file_import" name="new_file_import" class="admin__control-text">
+        </div>
+        <div class="admin__field-note">
+            <span>
+                <?= $block->escapeHtml(__('Select the file to import.')) ?>
+            </span>
+        </div>
+    </div>
+</form>
